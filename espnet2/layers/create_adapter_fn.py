@@ -111,7 +111,13 @@ def create_lora_adapter(
 
 
     """
+    try:
+        import loralib as lora
 
+        is_lora_available = True
+    except ImportError:
+        is_lora_available = False
+        
     if not is_lora_available:
         raise ImportError(
             "Requiring loralib. Install loralib following: "
