@@ -2,6 +2,7 @@ from typing import List, Optional
 
 import torch
 from typeguard import typechecked
+import loralib as lora
 
 from espnet2.asr.frontend.s3prl import S3prlFrontend
 from espnet2.layers.create_adapter_utils import (
