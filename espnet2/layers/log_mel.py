@@ -60,6 +60,7 @@ class LogMel(torch.nn.Module):
         ilens: torch.Tensor = None,
     ) -> Tuple[torch.Tensor, torch.Tensor]:
         # feat: (B, T, D1) x melmat: (D1, D2) -> mel_feat: (B, T, D2)
+        feat = feat.float()
         mel_feat = torch.matmul(feat, self.melmat)
         mel_feat = torch.clamp(mel_feat, min=1e-10)
 
